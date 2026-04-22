@@ -1,0 +1,455 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root, .theme-default {
+  --color-indigo-300: #a5b4fc;
+  --color-indigo-400: #818cf8;
+  --color-indigo-500: #6366f1;
+  --color-indigo-600: #4f46e5;
+  --color-indigo-700: #4338ca;
+  --color-violet-500: #8b5cf6;
+  --color-violet-600: #7c3aed;
+}
+
+.theme-ocean {
+  --color-indigo-300: #7dd3fc;
+  --color-indigo-400: #38bdf8;
+  --color-indigo-500: #0ea5e9;
+  --color-indigo-600: #0284c7;
+  --color-indigo-700: #0369a1;
+  --color-violet-500: #3b82f6;
+  --color-violet-600: #2563eb;
+}
+
+.theme-sunset {
+  --color-indigo-300: #fdba74;
+  --color-indigo-400: #fb923c;
+  --color-indigo-500: #f97316;
+  --color-indigo-600: #ea580c;
+  --color-indigo-700: #c2410c;
+  --color-violet-500: #f43f5e;
+  --color-violet-600: #e11d48;
+}
+
+.theme-forest {
+  --color-indigo-300: #6ee7b7;
+  --color-indigo-400: #34d399;
+  --color-indigo-500: #10b981;
+  --color-indigo-600: #059669;
+  --color-indigo-700: #047857;
+  --color-violet-500: #14b8a6;
+  --color-violet-600: #0d9488;
+}
+
+.theme-berry {
+  --color-indigo-300: #d8b4fe;
+  --color-indigo-400: #c084fc;
+  --color-indigo-500: #a855f7;
+  --color-indigo-600: #9333ea;
+  --color-indigo-700: #7e22ce;
+  --color-violet-500: #d946ef;
+  --color-violet-600: #c026d3;
+}
+
+.theme-cyber {
+  --color-indigo-300: #00f2ff;
+  --color-indigo-400: #00f2ff;
+  --color-indigo-500: #00f2ff;
+  --color-indigo-600: #00f2ff;
+  --color-indigo-700: #00f2ff;
+  --color-violet-500: #7000ff;
+  --color-violet-600: #7000ff;
+}
+
+body {
+  @apply transition-colors duration-700 font-sans;
+  background-attachment: fixed !important;
+  color: #0f172a;
+  min-height: 100vh;
+}
+
+.dark body {
+  color: #f8fafc;
+}
+
+/* Default Theme */
+.theme-default body {
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+}
+.dark.theme-default body {
+  background: linear-gradient(135deg, #020617 0%, #0c0e2b 35%, #1a0b3b 75%, #020617 100%) !important;
+}
+
+/* Ocean Theme */
+.theme-ocean body {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+}
+.dark.theme-ocean body {
+  background: linear-gradient(135deg, #082f49 0%, #0c4a6e 35%, #042f2e 75%, #082f49 100%) !important;
+}
+
+/* Sunset Theme */
+.theme-sunset body {
+  background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+}
+.dark.theme-sunset body {
+  background: linear-gradient(135deg, #431407 0%, #7c2d12 35%, #4c1d95 75%, #431407 100%) !important;
+}
+
+/* Forest Theme */
+.theme-forest body {
+  background: linear-gradient(135deg, #ecfdf5 0%, #dcfce7 100%);
+}
+.dark.theme-forest body {
+  background: linear-gradient(135deg, #022c22 0%, #064e3b 35%, #14532d 75%, #022c22 100%) !important;
+}
+
+/* Berry Theme */
+.theme-berry body {
+  background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+}
+.dark.theme-berry body {
+  background: linear-gradient(135deg, #4c1d95 0%, #701a75 35%, #831843 75%, #4c1d95 100%) !important;
+}
+
+/* Theme-specific visuals moved to the end to prevent global overrides */
+
+/* Premium Mesh Glow Effect */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--color-indigo-500) 8%, transparent) 0%, transparent 50%),
+    radial-gradient(circle at 100% 100%, color-mix(in srgb, var(--color-violet-500) 8%, transparent) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.dark body::before {
+  background: radial-gradient(circle at 0% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 100% 100%, rgba(168, 85, 247, 0.15) 0%, transparent 40%);
+}
+
+
+
+/* Tool styles with Glassmorphism */
+.glass-card {
+  @apply bg-white/70 dark:bg-slate-900/40 backdrop-blur-xl border border-white dark:border-slate-800/60 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-xl overflow-hidden transition-all duration-300 ease-out;
+}
+
+.glass-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08), 0 8px 20px color-mix(in srgb, var(--color-indigo-500) 15%, transparent);
+  border-color: color-mix(in srgb, var(--color-indigo-500) 20%, transparent);
+}
+
+.dark .glass-card:hover {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 8px 20px color-mix(in srgb, var(--color-indigo-500) 25%, transparent);
+  border-color: color-mix(in srgb, var(--color-indigo-500) 40%, transparent);
+}
+
+.glass-card:active {
+  transform: translateY(2px) scale(0.98);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition-duration: 100ms;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-indigo-400);
+  @apply rounded-full opacity-30;
+}
+
+input,
+button {
+  @apply transition-all duration-200 active:scale-[0.98];
+}
+
+/* === Glassmorphism Override for Page Buttons Only === */
+main button.bg-indigo-600, 
+main a.bg-indigo-600,
+main div.bg-indigo-600,
+main button[type="submit"] {
+  background-color: color-mix(in srgb, var(--color-indigo-500) 5%, transparent) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid color-mix(in srgb, var(--color-indigo-500) 40%, transparent) !important;
+  color: var(--color-indigo-600) !important;
+  box-shadow: 0 4px 15px 0 color-mix(in srgb, var(--color-indigo-500) 15%, transparent) !important;
+}
+
+.dark main button.bg-indigo-600, 
+.dark main a.bg-indigo-600,
+.dark main div.bg-indigo-600,
+.dark main button[type="submit"] {
+  background: linear-gradient(135deg, 
+    color-mix(in srgb, var(--color-indigo-500) 25%, transparent),
+    color-mix(in srgb, var(--color-violet-500) 25%, transparent),
+    color-mix(in srgb, var(--color-fuchsia-500, var(--color-violet-500)) 25%, transparent)
+  ) !important;
+  color: var(--color-indigo-100) !important;
+  border-color: color-mix(in srgb, var(--color-indigo-400) 40%, transparent) !important;
+  box-shadow: 0 8px 32px 0 color-mix(in srgb, var(--color-indigo-500) 20%, transparent) !important;
+}
+
+
+/* Hover States for Page Buttons */
+main button.hover\:bg-indigo-700:hover, 
+main a.hover\:bg-indigo-700:hover,
+main button[type="submit"]:hover {
+  background-color: color-mix(in srgb, var(--color-indigo-500) 25%, transparent) !important;
+}
+
+.dark main button.hover\:bg-indigo-700:hover, 
+.dark main a.hover\:bg-indigo-700:hover,
+.dark main button[type="submit"]:hover {
+  background-color: color-mix(in srgb, var(--color-indigo-500) 40%, transparent) !important;
+}
+
+/* Dynamic Cursor Glow */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  /* Promote to GPU layer to avoid full-page repaints on every mousemove */
+  will-change: background;
+  transform: translateZ(0);
+  background: radial-gradient(
+    var(--glow-size, 50px) circle at var(--mouse-x, -100vw) var(--mouse-y, -100vh),
+    color-mix(in srgb, var(--color-indigo-400) 60%, transparent),
+    transparent 100%
+  );
+}
+
+.dark body::after {
+  background: radial-gradient(
+    var(--glow-size, 50px) circle at var(--mouse-x, -100vw) var(--mouse-y, -100vh),
+    color-mix(in srgb, var(--color-indigo-400) 80%, transparent),
+    transparent 100%
+  );
+}
+
+/* === Cyber Dark Theme (Priority Overrides) === */
+
+.theme-cyber body, .dark.theme-cyber body {
+  background: #0A0A0B !important;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+@keyframes shooting-star {
+  0% { 
+    transform: translateX(0) translateY(0) rotate(-45deg) scale(0); 
+    opacity: 0; 
+  }
+  2% { 
+    opacity: 1; 
+    transform: translateX(0) translateY(0) rotate(-45deg) scale(1); 
+  }
+  15% { 
+    transform: translateX(-100vw) translateY(100vh) rotate(-45deg) scale(1.5); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: translateX(-100vw) translateY(100vh) rotate(-45deg) scale(1.5); 
+    opacity: 0; 
+  }
+}
+
+@keyframes asteroid-burn {
+  0% { 
+    transform: translateX(0) translateY(0) rotate(-35deg) scale(0); 
+    opacity: 0; 
+  }
+  2% { 
+    opacity: 1; 
+    transform: translateX(0) translateY(0) rotate(-35deg) scale(1); 
+  }
+  25% { 
+    transform: translateX(-100vw) translateY(70vh) rotate(-35deg) scale(2); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: translateX(-100vw) translateY(70vh) rotate(-35deg) scale(2); 
+    opacity: 0; 
+  }
+}
+
+.theme-cyber body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: 
+    radial-gradient(4px 4px at 15% 25%, #ffffff, transparent),
+    radial-gradient(2px 2px at 35% 55%, #ffffff, transparent),
+    radial-gradient(5px 5px at 55% 85%, #ffffff, transparent),
+    radial-gradient(2.5px 2.5px at 75% 35%, #ffffff, transparent),
+    radial-gradient(4px 4px at 95% 65%, #ffffff, transparent),
+    radial-gradient(2px 2px at 20% 10%, #ffffff, transparent),
+    radial-gradient(3.5px 3.5px at 40% 40%, #ffffff, transparent),
+    radial-gradient(2px 2px at 60% 70%, #ffffff, transparent),
+    radial-gradient(4px 4px at 80% 20%, #ffffff, transparent);
+  background-size: 400px 400px;
+  animation: twinkle 6s ease-in-out infinite;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.comet-layer {
+  position: fixed;
+  top: -100px;
+  right: -100px;
+  width: 2px;
+  height: 150px;
+  background: linear-gradient(to bottom, rgba(0, 242, 255, 0), #00f2ff, #ffffff);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.comet-1 { animation: shooting-star 12s linear infinite; animation-delay: 1s; }
+.comet-2 { animation: shooting-star 18s linear infinite; animation-delay: 7s; top: -150px; right: 20%; }
+.comet-3 { animation: shooting-star 14s linear infinite; animation-delay: 4s; top: -50px; right: 40%; width: 3px; }
+
+.asteroid-layer {
+  position: fixed;
+  top: -200px;
+  right: 5%;
+  width: 5px;
+  height: 250px;
+  background: linear-gradient(to bottom, transparent, #ff4d00, #ffae00, #ffffff);
+  filter: drop-shadow(0 0 15px #ff4500);
+  animation: asteroid-burn 25s linear infinite;
+  animation-delay: 10s;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 101;
+}
+
+/* === GLOW ENHANCEMENTS === */
+
+.theme-cyber .glass-card:hover {
+  box-shadow: 
+    0 0 20px rgba(0, 242, 255, 0.2),
+    0 0 40px rgba(0, 242, 255, 0.1),
+    0 20px 40px rgba(0, 0, 0, 0.4);
+  border-color: rgba(0, 242, 255, 0.5) !important;
+  transform: translateY(-8px) scale(1.03);
+}
+
+.theme-cyber button:hover, 
+.theme-cyber .nav-link:hover {
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+  filter: brightness(1.2);
+}
+
+.glow-text {
+  text-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+}
+
+.theme-cyber .glow-text {
+  text-shadow: 
+    0 0 10px rgba(0, 242, 255, 0.5),
+    0 0 20px rgba(0, 242, 255, 0.3);
+  color: #fff !important;
+}
+
+@keyframes text-shimmer {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; text-shadow: 0 0 30px rgba(0, 242, 255, 0.6); }
+  100% { opacity: 0.8; }
+}
+
+.animate-glow {
+  animation: text-shimmer 3s ease-in-out infinite;
+}
+
+/* Rocket Mode Bullet Styles */
+.bullet-shoot {
+  position: fixed;
+  pointer-events: none;
+  z-index: 99998;
+  width: 3px;
+  height: 20px;
+  background: linear-gradient(to top, #ff6a00, #ffd800, #ffffff);
+  filter: drop-shadow(0 0 8px #ff4500);
+  border-radius: 999px;
+}
+/* ── Loading Screen CSS Animations (replaces Framer Motion per-letter) ── */
+@keyframes letter-drop {
+  0%   { opacity: 0; transform: translateY(-60px) rotateX(-90deg); }
+  60%  { transform: translateY(4px) rotateX(6deg); }
+  100% { opacity: 1; transform: translateY(0) rotateX(0deg); }
+}
+@keyframes loader-fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes loader-scale-in {
+  0%   { opacity: 0; transform: scale(0.4) rotate(-20deg); }
+  70%  { transform: scale(1.05) rotate(2deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+@keyframes underline-grow {
+  from { transform: scaleX(0); opacity: 0; }
+  to   { transform: scaleX(1); opacity: 1; }
+}
+@keyframes progress-fill {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+@keyframes blob-breathe {
+  0%, 100% { opacity: 0.07; transform: scale(1); }
+  50%       { opacity: 0.12; transform: scale(1.06); }
+}
+
+.loader-letter {
+  display: inline-block;
+  opacity: 0;
+  animation: letter-drop 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  transform-origin: top center;
+}
+.loader-icon {
+  animation: loader-scale-in 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+}
+.loader-underline {
+  animation: underline-grow 0.6s ease-out forwards;
+  transform-origin: center;
+}
+.loader-subtitle {
+  animation: loader-fade-up 0.5s ease-out forwards;
+}
+.loader-bar-inner {
+  animation: progress-fill linear forwards;
+  will-change: width;
+}
+.loader-footer {
+  animation: loader-fade-up 0.5s ease-out 1.0s both;
+}
+.loader-progress-wrap {
+  animation: loader-fade-up 0.4s ease-out 0.85s both;
+}
+.loader-blob {
+  animation: blob-breathe 4s ease-in-out infinite;
+  will-change: transform, opacity;
+}

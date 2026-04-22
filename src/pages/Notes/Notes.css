@@ -1,0 +1,24 @@
+/* ── Notes.css ───────────────────────────────────────────────
+   Styles specific to the Quick Notes page.
+   ─────────────────────────────────────────────────────────── */
+
+/* Textarea custom selection highlight */
+.notes-textarea::selection {
+  background-color: rgba(20, 184, 166, 0.2); /* teal-500/20 */
+}
+
+/* Saving dot pulse */
+.saving-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+.saving-dot.syncing  { background-color: #f59e0b; animation: pulse 1s infinite; } /* amber */
+.saving-dot.saved    { background-color: #14b8a6; }                               /* teal  */
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}

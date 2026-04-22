@@ -1,0 +1,45 @@
+/* ── Home.css ────────────────────────────────────────────────
+   Styles specific to the Dashboard / Home page.
+   Global styles stay in src/index.css
+   ─────────────────────────────────────────────────────────── */
+
+/* Pull-wire animation — the draggable "Pf" handle at top-right */
+.pull-wire-line {
+  width: 2px;
+  height: 8rem;
+  background: linear-gradient(to bottom, rgba(99, 102, 241, 0.2), rgba(99, 102, 241, 0.6));
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+}
+
+.pull-wire-knob {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-top: -0.25rem;
+  border-radius: 9999px;
+  background: #0f172a;               /* slate-900 */
+  border: 3px solid #6366f1;         /* indigo-500 */
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Stat counter card hover ring */
+.stat-card:hover {
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
+}
+
+/* Tool card bottom accent bar */
+.tool-card-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: #6366f1;
+  transition: width 0.5s ease;
+}
+.tool-card:hover .tool-card-bar {
+  width: 100%;
+}

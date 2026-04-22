@@ -1,0 +1,49 @@
+/* ── Portfolio.css ───────────────────────────────────────────
+   Professional portfolio — layout, animations, overrides.
+   ─────────────────────────────────────────────────────────── */
+
+/* ── Scroll snap for hero ── */
+#hero { scroll-margin-top: 80px; }
+#about, #skills, #projects, #insights, #contact { scroll-margin-top: 80px; }
+
+/* ── Project card 3D tilt ── */
+.project-card { will-change: transform; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+.project-card:hover { box-shadow: 0 24px 60px rgba(99, 102, 241, 0.18); }
+
+/* ── Skill bar label hover ── */
+.skill-row:hover .skill-label { color: #6366f1; }
+
+/* ── Timeline vertical connector ── */
+.timeline-line {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(to bottom, #6366f1, #a855f7, transparent);
+  border-radius: 9999px;
+}
+
+/* ── "Available" pulse ring ── */
+@keyframes available-ring {
+  0%   { box-shadow: 0 0 0 0   rgba(34,197,94,0.5); }
+  100% { box-shadow: 0 0 0 10px rgba(34,197,94,0);   }
+}
+.available-dot { animation: available-ring 1.4s ease-out infinite; }
+
+/* ── Insight card accordion ── */
+.insight-card { transition: border-color 0.2s, box-shadow 0.2s; }
+.insight-card:hover { border-color: rgba(99,102,241,0.3); }
+
+/* ── Back-to-top button ── */
+.back-top { transition: opacity 0.25s, transform 0.25s; }
+
+/* ── Counter number ── */
+.counter-num { font-variant-numeric: tabular-nums; }
+
+/* ── Tech chip hover ── */
+.tech-chip { transition: background 0.15s, border-color 0.15s; }
+.tech-chip:hover { filter: brightness(1.15); }
+
+/* ── Portfolio footer ── */
+.pf-footer { border-top: 0.5px solid rgba(99,102,241,0.12); }

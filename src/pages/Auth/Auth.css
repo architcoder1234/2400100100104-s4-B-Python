@@ -1,0 +1,18 @@
+/* ── Auth.css ────────────────────────────────────────────────
+   Styles specific to the Login / Registration page.
+   ─────────────────────────────────────────────────────────── */
+
+/* Input icon group — highlight icon on focus */
+.auth-field:focus-within .auth-icon {
+  color: #6366f1; /* indigo-500 */
+}
+
+/* Slide-in form animation */
+.auth-form-enter {
+  animation: authSlide 0.3s ease-out both;
+}
+
+@keyframes authSlide {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}

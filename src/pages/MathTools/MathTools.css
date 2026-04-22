@@ -1,0 +1,3 @@
+/* MathTools.css */
+.calc-display { font-family: 'Courier New', monospace; }
+.calc-btn:active { transform: scale(0.93); }

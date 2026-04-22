@@ -1,0 +1,4 @@
+/* CodeBreaker.css */
+.guess-cell.green  { background: rgba(34,197,94,0.12);  border-color: rgba(34,197,94,0.35);  color: #16a34a; }
+.guess-cell.yellow { background: rgba(234,179,8,0.12);  border-color: rgba(234,179,8,0.35);  color: #ca8a04; }
+.guess-cell.red    { background: transparent; border-color: transparent; color: #94a3b8; opacity: 0.55; }

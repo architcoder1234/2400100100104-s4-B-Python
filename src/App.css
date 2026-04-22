@@ -1,0 +1,175 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Background blob animations */
+.bg-blob {
+    position: absolute;
+    filter: blur(100px);
+    z-index: -1;
+    border-radius: 50%;
+    animation: float 10s ease-in-out infinite;
+    opacity: 0.6;
+}
+
+.bg-blob.blob1 {
+    width: 400px;
+    height: 400px;
+    background: #8a2be2;
+    top: -10%;
+    left: -10%;
+    animation-delay: 0s;
+}
+
+.bg-blob.blob2 {
+    width: 500px;
+    height: 500px;
+    background: var(--accent-secondary);
+    bottom: -20%;
+    right: -10%;
+    animation-delay: -5s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(30px, 50px);
+    }
+}
+
+.hero-section {
+    text-align: center;
+    margin-bottom: 3rem;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    margin-bottom: 1rem;
+    background: var(--gradient-glow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeInDown 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s backwards;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1000px;
+    z-index: 1;
+}
+
+.glass-card {
+    background: rgba(31, 40, 51, 0.4);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: left;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s backwards;
+}
+
+.glass-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-primary);
+    box-shadow: 0 10px 30px rgba(102, 252, 241, 0.1);
+}
+
+.glass-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.glass-card p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.action-btn {
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--bg-main);
+    background: var(--gradient-glow);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(102, 252, 241, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: fadeIn 1s ease 0.6s backwards;
+}
+
+.action-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(102, 252, 241, 0.5);
+}
+
+.action-btn:active {
+    transform: scale(0.95);
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

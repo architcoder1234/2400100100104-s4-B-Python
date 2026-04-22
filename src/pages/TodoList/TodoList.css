@@ -1,0 +1,22 @@
+/* ── TodoList.css ────────────────────────────────────────────
+   Styles specific to the To-Do List page.
+   ─────────────────────────────────────────────────────────── */
+
+.task-text.completed {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+.todo-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* Drag handle */
+.drag-handle { touch-action: none; }
+
+/* Item being dragged */
+.task-item.dragging {
+  opacity: 0.4;
+  transform: scale(0.98);
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.4);
+}

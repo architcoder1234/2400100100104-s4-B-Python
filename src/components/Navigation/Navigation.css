@@ -1,0 +1,14 @@
+/* ── Navigation.css ──────────────────────────────────────────
+   Styles for the sticky top nav bar.
+   Most styling is inline Tailwind — only unique overrides go here.
+   ─────────────────────────────────────────────────────────────*/
+
+/* Glowing bottom border on scroll (applied via JS class 'scrolled') */
+.nav-bar.scrolled {
+  box-shadow: 0 4px 32px rgba(99, 102, 241, 0.12);
+}
+
+/* Active NavLink highlight */
+.nav-bar a.active .nav-link-label {
+  color: #6366f1;
+}

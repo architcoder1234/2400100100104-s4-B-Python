@@ -1,0 +1,3 @@
+/* UnitConverter.css */
+.unit-result-panel { transition: transform 0.2s ease; }
+.unit-result-panel:hover { transform: translateY(-2px); }

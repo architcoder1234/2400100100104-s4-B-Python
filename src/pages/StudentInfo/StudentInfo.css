@@ -1,0 +1,28 @@
+/* ── StudentInfo.css ────────────────────────────────────────
+   Styles specific to the Student Info page.
+   ─────────────────────────────────────────────────────────── */
+
+/* Avatar circle border glow on hover */
+.student-card:hover .student-avatar {
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.25);
+}
+
+/* Marks bar fill animation */
+.marks-bar {
+  height: 4px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #6366f1, #a855f7);
+  transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Status badge base */
+.status-badge {
+  padding: 2px 10px;
+  border-radius: 9999px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid transparent;
+}
